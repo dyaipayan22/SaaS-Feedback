@@ -1,0 +1,59 @@
+@import '@/app/variables.scss';
+
+.main {
+  background-color: $white;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: $orange;
+  }
+
+  .status_container {
+    .status {
+      color: $blue-gray;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .title {
+    color: $blue-secondary;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    color: $blue-gray;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .info_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .comment {
+      color: $blue-secondary;
+      font-size: 16px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .image {
+      position: absolute;
+      right: 40px;
+    }
+  }
+}

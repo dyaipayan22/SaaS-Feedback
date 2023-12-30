@@ -1,0 +1,45 @@
+@import '@/app/variables.scss';
+
+.card_container {
+  background-color: $white;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        color: $blue-secondary;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .description {
+        color: $blue-gray;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    .comments {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .num_comments {
+        color: $blue-secondary;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+}

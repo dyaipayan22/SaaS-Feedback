@@ -1,0 +1,26 @@
+@import '@/app/variables.scss';
+
+.container {
+  background-color: $badge-primary;
+  font-size: 13px;
+  font-weight: 700;
+  color: $blue-secondary;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 10px;
+  width: 40px;
+  height: 53px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+
+  &:hover {
+    background-color: $badge-hover;
+  }
+
+  &:active {
+    background-color: $badge-active;
+  }
+}

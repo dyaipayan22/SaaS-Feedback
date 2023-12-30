@@ -1,0 +1,16 @@
+@import '@/app/variables.scss';
+
+.container {
+  background-color: $white;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .title {
+    color: $blue-secondary;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

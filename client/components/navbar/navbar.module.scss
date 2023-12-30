@@ -1,0 +1,27 @@
+@import '@/app/variables.scss';
+
+.nav {
+  width: 100%;
+  background-color: $blue-secondary-500;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .text_container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    color: white;
+
+    .suggestions {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .sort {
+      font-size: 14px;
+    }
+  }
+}

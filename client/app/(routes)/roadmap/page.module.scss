@@ -1,0 +1,67 @@
+@import '@/app/variables.scss';
+
+.main {
+  background-color: $background;
+  width: 100%;
+  min-height: 100vh;
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .navbar {
+      background-color: $blue-secondary-500;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border-radius: 10px;
+
+      .nav_container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .back {
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+
+        .heading {
+          font-size: 24px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .roadmap_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .title_container {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        margin-bottom: 10px;
+
+        .title {
+          color: $blue-secondary;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        .subtitle {
+          color: $blue-gray;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
