@@ -11,6 +11,7 @@ import empty from '@/public/assets/illustration-empty.svg';
 export default function Home() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
   const [numSuggestions, setNumSuggestions] = useState<number>(0);
+  const [suggestions, setSuggestions] = useState<Feedback[]>([]);
   const [counts, setCounts] = useState({
     planned: 0,
     progress: 0,
@@ -34,10 +35,14 @@ export default function Home() {
         });
         const feedbacksData = response.data.data;
         setFeedbacks(feedbacksData);
-        const suggestionFeedbacks = feedbacksData.filter(
-          (feedback: Feedback) => feedback.status === 'Suggestion'
-        );
-        setNumSuggestions(suggestionFeedbacks.length);
+        let suggestions: Feedback[] = [];
+        feedbacksData.forEach((feedback: Feedback) => {
+          if (feedback.status === 'Suggestion') {
+            suggestions.push(feedback);
+          }
+        });
+        setSuggestions(suggestions);
+        setNumSuggestions(suggestions.length);
         const counts = feedbacksData.reduce((acc, feedback) => {
           if (feedback.status === 'Planned') {
             acc.planned++;
@@ -62,7 +67,7 @@ export default function Home() {
         <Sidebar setParams={setParams} counts={counts} />
         <div className={styles.suggestions_container}>
           <Navbar setParams={setParams} numberOfSuggestions={numSuggestions} />
-          {feedbacks && feedbacks.length === 0 ? (
+          {suggestions && suggestions.length === 0 ? (
             <div className={styles.empty_container}>
               <Image src={empty} height={100} width={100} alt="Empty" />
               <span className={styles.text}>
@@ -73,7 +78,7 @@ export default function Home() {
               </span>
             </div>
           ) : (
-            feedbacks?.map((feedback, index) => (
+            suggestions?.map((feedback, index) => (
               <FeedbackCard feedback={feedback} key={index} />
             ))
           )}
